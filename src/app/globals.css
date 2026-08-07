@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg: #0A0D14;
+  --surface: #111827;
+  --border: #1F2937;
+  --accent: #6366F1;
+  --accent-2: #A78BFA;
+  --success: #10B981;
+  --text: #F9FAFB;
+  --muted: #6B7280;
+  --radius: 12px;
+  --transition: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body {
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .text-gradient-animate {
+    background: linear-gradient(135deg, #6366F1 0%, #A78BFA 50%, #818CF8 100%);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 4s ease infinite;
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #6366F1 0%, #A78BFA 50%, #818CF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0% 50% }
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0) }
+  100% { transform: translateX(-50%) }
+}
+
+@keyframes pulse-flame { 
+  0%, 100% { transform: scale(1) } 
+  50% { transform: scale(1.08) } 
+}
